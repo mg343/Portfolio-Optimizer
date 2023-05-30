@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Optimizer</title>
+</head>
+<body>
+    <h1>Portfolio Optimizer</h1>
+    <form action="/optimize" method="post">
+        <h2>Portfolio Details:</h2>
+        <table>
+            <tr>
+                <th>Ticker</th>
+                <th>Allocation</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="ticker" placeholder="Ticker Symbol" required></td>
+                <td><input type="number" name="allocation" placeholder="Allocation" step="0.01" min="0" max="1" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="ticker" placeholder="Ticker Symbol" required></td>
+                <td><input type="number" name="allocation" placeholder="Allocation" step="0.01" min="0" max="1" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="ticker" placeholder="Ticker Symbol" required></td>
+                <td><input type="number" name="allocation" placeholder="Allocation" step="0.01" min="0" max="1" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="ticker" placeholder="Ticker Symbol" required></td>
+                <td><input type="number" name="allocation" placeholder="Allocation" step="0.01" min="0" max="1" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="ticker" placeholder="Ticker Symbol" required></td>
+                <td><input type="number" name="allocation" placeholder="Allocation" step="0.01" min="0" max="1" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="ticker" placeholder="Ticker Symbol" required></td>
+                <td><input type="number" name="allocation" placeholder="Allocation" step="0.01" min="0" max="1" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="ticker" placeholder="Ticker Symbol" required></td>
+                <td><input type="number" name="allocation" placeholder="Allocation" step="0.01" min="0" max="1" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="ticker" placeholder="Ticker Symbol" required></td>
+                <td><input type="number" name="allocation" placeholder="Allocation" step="0.01" min="0" max="1" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="ticker" placeholder="Ticker Symbol" required></td>
+                <td><input type="number" name="allocation" placeholder="Allocation" step="0.01" min="0" max="1" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="ticker" placeholder="Ticker Symbol" required></td>
+                <td><input type="number" name="allocation" placeholder="Allocation" step="0.01" min="0" max="1" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="ticker" placeholder="Ticker Symbol" required></td>
+                <td><input type="number" name="allocation" placeholder="Allocation" step="0.01" min="0" max="1" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="ticker" placeholder="Ticker Symbol" required></td>
+                <td><input type="number" name="allocation" placeholder="Allocation" step="0.01" min="0" max="1" required></td>
+            </tr>
+            <!-- Repeat the above two rows for additional ticker and allocation inputs -->
+        </table>
+        <br>
+        <h2>Optimization Technique:</h2>
+        <input type="radio" name="technique" value="mean_variance" required> Mean Variance Optimization<br>
+        <input type="radio" name="technique" value="cvar" required> Conditional Value-at-Risk (CVaR) Optimization<br>
+        <br>
+        <input type="submit" value="Optimize">
+    </form>
+</body>
+</html>
