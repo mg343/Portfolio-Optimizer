@@ -3,3 +3,7 @@
 <p>Current Return: {{ currentreturn }}</p>
 <p>Optimized Return: {{ optimizedreturn }}</p>
 <p>Volatility: {{ volatility }}</p>
+
+{% if returnchart %}
+<img src="data:image/png;base64,{{ returnchart }}">
+{% endif %}

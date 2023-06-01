@@ -2,13 +2,6 @@ import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# # Create a DataFrame with ticker names and allocations
-# data = {
-#     'Ticker': ['AAPL', 'MSFT', 'GOOGL', 'AMZN'],
-#     'Allocation': [0.3, 0.4, 0.2, 0.1]
-# }
-# df = pd.DataFrame(data)
-
 def calculate_portfolio_returns(df):
     """
     Calculates monthly returns and cumulative returns for a portfolio given a DataFrame with ticker names and allocations.
@@ -49,17 +42,5 @@ def calculate_portfolio_returns(df):
     # Calculate the cumulative returns
     cumulative_returns = portfolio_returns['Portfolio'].cumsum() * 100
 
-    # Plot the cumulative returns
-    # plt.figure(figsize=(12, 6))
-    # cumulative_returns.plot()
-    # plt.title('Portfolio Returns')
-    # plt.xlabel('Date')
-    # plt.ylabel('Cumulative Returns (%)')
-    # plt.grid(True)
-    # plt.show()
-
     # Return the portfolio returns DataFrame
     return cumulative_returns
-
-
-# Calculate and plot the portfolio returns

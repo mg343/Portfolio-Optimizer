@@ -4,8 +4,9 @@ from flask import Flask, render_template, request
 import pandas as pd
 
 # Import the optimization functions
-from portfolio_optimizer import mean_variance_optimization, conditional_value_at_risk_optimization
+from portfolio_optimizer import *
 from cumsum import *
+from graphs import *
 
 
 app = Flask(__name__)
@@ -51,14 +52,7 @@ def optimize():
     optimizedreturn1 = calculate_portfolio_returns(stocknewdf)
     optimizedreturn = round(optimizedreturn1[-1], 3)
 
-    plt.figure(figsize=(12, 6))
-    plt.plot(currentreturn1, label = "Current Portfolio")
-    plt.plot(optimizedreturn1, label = "Optimized Portfolio")
-    plt.title('Portfolio Returns')
-    plt.xlabel('Date')
-    plt.ylabel('Cumulative Returns (%)')
-    plt.grid(True)
-    plt.show()
+    returnchart = return_graph(optimizedreturn1, currentreturn1)
 
     # Pass the optimization results to the template
     return render_template('result.html',
@@ -67,7 +61,8 @@ def optimize():
                            weights=weights,
                            currentreturn=currentreturn,
                            optimizedreturn=optimizedreturn,
-                           volatility=volatility)
+                           volatility=volatility,
+                           returnchart = returnchart)
 
 
 
