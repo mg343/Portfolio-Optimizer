@@ -31,10 +31,26 @@ def optimize():
     allocations = [float(alloc) for alloc in allocations]
 
     if request.form['technique'] == 'mean_variance':
-        weights, return1, volatility = mean_variance_optimization(data, allocations)
-
+        weights, return1, volatility, value1, name = mean_variance_optimization(data)
     elif request.form['technique'] == 'cvar':
-        weights, return1, volatility = conditional_value_at_risk_optimization(data, allocations)
+        weights, return1, volatility, value1, name= conditional_value_at_risk_optimization(data)
+    elif request.form['technique'] == 'risk_parity':
+        weights, return1, volatility, value1, name= risk_parity_optimization(data)
+    elif request.form['technique'] == 'tracking_error':
+        weights, return1, volatility, value1, name= tracking_error_optimization(data)
+    elif request.form['technique'] == 'information_ratio':
+        weights, return1, volatility, value1, name= information_ratio_optimization(data)
+    elif request.form['technique'] == 'kelly_criterion':
+        weights, return1, volatility, value1, name= kelly_criterion_optimization(data)
+    elif request.form['technique'] == 'sortino_ratio':
+        weights, return1, volatility, value1, name= sortino_ratio_optimization(data)
+    elif request.form['technique'] == 'omega_ratio':
+        weights, return1, volatility, value1, name= omega_ratio_optimization(data)
+    elif request.form['technique'] == 'maximum_drawdown':
+        weights, return1, volatility, value1, name= maximum_drawdown_optimization(data, allocations)
+    elif request.form['technique'] == 'sharpe_ratio':
+        weights, return1, volatility, value1, name= risk_adjusted_return_optimization(data, allocations)
+
 
     stockolddf = pd.DataFrame(
     {'Ticker': ticker_symbols,
@@ -62,7 +78,7 @@ def optimize():
                            currentreturn=currentreturn,
                            optimizedreturn=optimizedreturn,
                            volatility=volatility,
-                           returnchart = returnchart)
+                           returnchart = returnchart, name=name, value1=value1)
 
 
 
