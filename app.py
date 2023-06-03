@@ -23,7 +23,7 @@ def optimize():
     # Retrieve the data for the selected ticker symbols from Yahoo Finance
     data = pd.DataFrame()
     for ticker in ticker_symbols:
-        stock_data = yf.download(ticker, start='2010-01-01', end='2023-05-28')
+        stock_data = yf.download(ticker, start='2010-01-01')
         stock_returns = stock_data['Adj Close'].pct_change()
         data[ticker] = stock_returns
 
@@ -75,8 +75,8 @@ def optimize():
                            ticker_symbols=ticker_symbols,
                            allocations=allocations,
                            weights=weights,
-                           currentreturn=currentreturn,
-                           optimizedreturn=optimizedreturn,
+                           currentreturn=optimizedreturn,
+                           optimizedreturn=currentreturn,
                            volatility=volatility,
                            returnchart = returnchart, name=name, value1=value1)
 
